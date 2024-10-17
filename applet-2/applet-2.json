@@ -18,7 +18,17 @@
         "latitude": 8.367976,
         "longitude": 124.866320,
         "message": "Manolo Fortich Centennial Plaza"
+    },
+    {
+        "latitude": 8.367528,
+        "longitude": 124.865390,
+        "message": "Jollibee Manolo Fortich"
+    },
+    {
+        "latitude": 8.368222,
+        "longitude": 124.862912,
+        "message": "Manolo Fortich National High School"
     }
-
    
+
 ]

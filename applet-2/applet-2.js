@@ -29,13 +29,16 @@ class LeafletMap {
     }
 }
 
-const myMap = new LeafletMap('map', [8.360004, 124.868419], 18);
+const myMap = new LeafletMap('map', [8.3677958,124.8656062], 17);
 
 /*
 myMap.addMarker(8.349047, 124.712224, 'Cowboy's Camp');
 myMap.addMarker(8.304909,125.028798, 'Communal Ranch bukidnon');
 myMap.addMarker(8.439657,124.877467, 'Ogaong View Deck');
 myMap.addMarker(8.367976,124.866320, 'Manolo Fortich Centennial Plaza');
+myMap.addMarker(8.367528,124.865390, 'Jollibee Manolo Fortich');
+myMap.addMarker(8.368222,124.862912, 'Manolo Fortich National High School');
 */
+
 
 myMap.loadMarkersFromJson('applet-2.json');

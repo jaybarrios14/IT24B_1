@@ -13,20 +13,20 @@
           crossorigin="anonymous">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #e7dede;
             font-family: 'Roboto', sans-serif;
         }
         .applet-container {
             margin: 2rem auto;
             padding: 2rem;
             border-radius: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #0c0c0c;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.);
             width: 90%;
             max-width: 800px;
         }
         .student-card {
-            background-color: #007bff;
+            background-color: #53a2f7;
             color: white;
             margin: 0.5rem 0;
             padding: 0.75rem;
@@ -50,12 +50,12 @@
             color: #ffffff !important; 
         }
         .navbar .nav-link:hover, .navbar-brand:hover {
-            color: #e2e6ea !important; 
+            color: #f0e8e8 !important; 
         }
         .log-entry {
             margin: 0.5rem 0;
             padding: 1rem;
-            background-color: #ffffff;
+            background-color: #f5f0f0;
             border: 1px solid #007bff;
             border-radius: 0.5rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -77,11 +77,12 @@
                              Applets
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./applet-1/">Applet 1</a></li>
-                                <li><a class="dropdown-item" href="./applet-2/">Applet 2</a></li>
-                                <li><a class="dropdown-item" href="./applet-3/">Applet 3</a></li>
-                                <li><a class="dropdown-item" href="./applet-4/">Applet 4</a></li>
-                            </ul>
+                                <li><a class="dropdown-item" href="../applet-1/index.html">Applet 1</a></li>
+                                <li><a class="dropdown-item" href="../applet-2/index.html">Applet 2</a></li>
+                                <li><a class="dropdown-item" href="../applet-3/index.html">Applet 3</a></li>
+                                <li><a class="dropdown-item" href="../applet-4/index.html">Applet 4</a></li>
+                            </ul> 
+                            
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -101,13 +102,13 @@
             <input type="text" class="form-control" placeholder="Search" id="search-input">
         </div>
         <div id="student-list">
-            <div class="student-card">LeBron Raymone James Sr. | Bachelor of Science in Computer Science</div>
-            <div class="student-card">Wardell Stephen Curry II | Bachelor of Science in Computer Engineering</div>
-            <div class="student-card">Kevin Wayne Durant | Bachelor of Science in Information Technology</div>
-            <div class="student-card">Victor Wembanyama | Bachelor of Science in Entertainment and Media Computing</div>
-            <div class="student-card">Paul Clifton Anthony George | Bachelor of Science in Data Science</div>
-            <div class="student-card">James Edward Harden Jr. | Bachelor of Science in Information Science</div>
-            <div class="student-card">Russell Westbrook III | Bachelor of Science in ESports</div>
+            <div class="student-card">Leonardo DiCaprio | Bachelor of Science in Computer Science</div>
+            <div class="student-card">Meryl Streep | Bachelor of Science in Computer Engineering</div>
+            <div class="student-card">Denzel Washington| Bachelor of Science in Information Technology</div>
+            <div class="student-card">Scarlett Johansson| Bachelor of Science in Entertainment and Media Computing</div>
+            <div class="student-card">Tom Hanks | Bachelor of Science in Data Science</div>
+            <div class="student-card">Viola Davis | Bachelor of Science in Information Science</div>
+            <div class="student-card">Robert Downey Jr. | Bachelor of Science in ESports</div>
         </div>
     </div>
 
@@ -116,13 +117,13 @@
         const searchInput = document.getElementById('search-input');
         const studentList = document.getElementById('student-list');
         const students = [
-            "LeBron Raymone James Sr. | Bachelor of Science in Computer Science",
-            "Wardell Stephen Curry II | Bachelor of Science in Computer Engineering",
-            "Kevin Wayne Durant | Bachelor of Science in Information Technology",
-            "Victor Wembanyama | Bachelor of Science in Entertainment and Media Computing",
-            "Paul Clifton Anthony George | Bachelor of Science in Data Science",
-            "James Edward Harden Jr. | Bachelor of Science in Information Science",
-            "Russell Westbrook III | Bachelor of Science in ESports"
+            "Leonardo DiCaprio | Bachelor of Science in Computer Science",
+            "Meryl Streep | Bachelor of Science in Computer Engineering",
+            "Denzel Washington | Bachelor of Science in Information Technology",
+            "Scarlett Johansson | Bachelor of Science in Entertainment and Media Computing",
+            "Tom Hanks  | Bachelor of Science in Data Science",
+            "Viola Davis | Bachelor of Science in Information Science",
+            "Robert Downey Jr. | Bachelor of Science in ESports"
         ];
 
 
