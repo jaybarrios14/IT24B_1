@@ -6,5 +6,5 @@ function updateDisplay() {
 
 function showAlert() {
     var textbox = document.getElementById('textbox');
-    alert(" " + textbox.value);
+    alert("Hello " + textbox.value);
 }

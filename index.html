@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>IT24 Applets Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>IT24 Resources</title>
     <style>
         body {
             background-color: #f8f9fa;
@@ -15,7 +15,11 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            align-items: flex-start;
             margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 80%;
         }
 
         .applet-flex-container > div {
@@ -28,71 +32,145 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
+        .title {
+            text-align: center;
+            margin-top: 2rem;
+            color: #343a40;
+            font-weight: 700;
+        }
+
         .applet-card {
             width: 20rem;
-            height: 12rem;
+            height: 15rem;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            transition: box-shadow 0.2s ease;
         }
 
         .applet-card h5 {
-            color: #343a40;
+            color: #007bff;
         }
 
-        .applet-card img {
-            width: 50px; /* Adjust size as needed */
-            height: 50px; /* Adjust size as needed */
+        .applet-card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
         .applet-card .btn {
             background-color: #007bff;
-            color: white;
-            border-radius: 20px;
-            margin-top: 10px;
+            color: #0e0909;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            transition: background-color 0.2s ease;
         }
 
-        h1 {
-            text-align: center;
-            margin-top: 2rem;
-            color: #343a40;
+        .applet-card .btn:hover {
+            background-color: #0056b3;
+        }
+
+        nav.navbar {
+            background-color: #ee0707;
+        }
+
+        nav a.navbar-brand, nav a.nav-link, nav .dropdown-item {
+            color: rgb(226, 223, 11) !important;
+        }
+
+        nav a.navbar-brand:hover, nav a.nav-link:hover, nav .dropdown-item:hover {
+            color: #f3efef !important;
+        }
+
+        .btn-outline-success {
+            border-color: #ffc107;
+            color: #ffc107;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #111110;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .applet-card {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Applets
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../applet-1/index.html">Applet 1</a></li>
+                <li><a class="dropdown-item" href="../applet-2/index.html">Applet 2</a></li>
+                <li><a class="dropdown-item" href="../applet-3/index.html">Applet 3</a></li>
+                <li><a class="dropdown-item" href="../applet-4/index.html">Applet 4</a></li>
+            </ul>  
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+</nav>
+
 <body>
 
-<h1>Event Driven Programming Library</h1>
+    <h1 class="title">Event Driven Programming Library</h1>
+    <div class="applet-flex-container">
+        <!--Applet 1 Card-->
+        <div class="card applet-card">
+            <div class="card-body">
+                <h5 class="card-title">Applet 1 - Basic Events</h5>
+                <p class="card-text">This application contains the basic implementation of DOM events.</p>
+                <a href="./applet-1/" class="btn">Go to Applet</a>
+            </div>
+        </div>
 
-<div class="applet-flex-container" id="appletContainer">
-</div>
+        <!--Applet 2 Card-->
+        <div class="card applet-card">
+            <div class="card-body">
+                <h5 class="card-title">Applet 2 - Leaflet Map</h5>
+                <p class="card-text">This application contains the basic web map functionality.</p>
+                <a href="./applet-2/" class="btn">Go to Applet</a>
+            </div>
+        </div>
 
-<script>
-    const applets = [
-        { title: 'Applet 1 - Basic Events', description: 'Handle basic DOM events.', link: './applet-1/', icon: 'https://img.pikbest.com/png-images/qiantu/cartoon-illustration-free-drawing-light-bulb_2606033.png!sw800' },  // Updated icon
-        { title: 'Applet 2 - Leaflet Map', description: 'Interactive web map.', link: './applet-2/', icon: 'https://img.icons8.com/ios/100/000000/map.png' },
-        { title: 'Applet 3 - Event Button Logger', description: 'Log button events.', link: './applet-3/', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT56yYI1YjEq3a_kG0eBWsvQFajWwAjGXpcuw&s' }, // Updated icon
-        { title: 'Applet 4 - Dynamic Elements', description: 'Generate dynamic elements.', link: './applet-4/', icon: 'https://www.svgrepo.com/show/376470/curly-braces-line.svg' }, // Updated icon
-    ];  
+        <!--Applet 3 Card-->
+        <div class="card applet-card">
+            <div class="card-body">
+                <h5 class="card-title">Applet 3 - Event Button Logger</h5>
+                <p class="card-text">This app logs button events and demonstrates event-driven design.</p>
+                <a href="./applet-3/" class="btn">Go to Applet</a>
+            </div>
+        </div>
+    </div>
 
-    function displayApplets() {
-        const appletContainer = document.getElementById('appletContainer');
-        applets.forEach(applet => {
-            const card = `
-                <div class="card applet-card">
-                    <div class="card-body">
-                        <img src="${applet.icon}" alt="${applet.title}">
-                        <h5 class="card-title">${applet.title}</h5>
-                        <p class="card-text">${applet.description}</p>
-                        <a href="${applet.link}" class="btn">Go to Applet</a>
-                    </div>
-                </div>
-            `;
-            appletContainer.innerHTML += card;
-        });
-    }
-
-    window.onload = displayApplets;
-</script>
+         <!-- Applet 4 Card -->
+        <div class="applet-flex-container">
+             <div class="card applet-card">
+               <div class="card-body">
+                 <h5 class="card-title">Applet 4 - Dynamic Elements</h5>
+                 <p class="card-text">This application applies dynamic elements such as rendering DOM elements from a list.</p>
+                 <a href="./applet-4/" class="btn">Go to Applet</a>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

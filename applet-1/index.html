@@ -107,6 +107,15 @@
         <button class="btn btn-primary" onclick="showAlert()">Display Alert</button>
     </div>
     
-    <script src="applet-1.js"></script>
+    <script>
+        function updateDisplay() {
+            var input = document.getElementById("textbox").value;
+            document.getElementById("displayText").innerText = input ? input : "Your text will appear here";
+        }
+
+        function showAlert() {
+            alert("Button clicked!");
+        }
+    </script>
 </body>
 </html>
