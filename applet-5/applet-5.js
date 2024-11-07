@@ -1,6 +1,8 @@
 class WeatherApp {
-    constructor(apiKey) {
-        this.apiKey = apiKey;
+    constructor() {
+        
+        this.apiKey = document.getElementById('apiKeyInput'); 
+        
        
         this.cityInput = document.getElementById('cityInput');
         this.getWeatherBtn = document.getElementById('getWeatherBtn');
@@ -16,18 +18,23 @@ class WeatherApp {
         this.humidity = document.getElementById('humidity');
         this.windSpeed = document.getElementById('windSpeed');
 
-         
-         this.getWeatherBtn.addEventListener('click', () => this.fetchWeather());
-         this.getLocationBtn.addEventListener('click', () => this.fetchWeatherByLocation());
-     }
- 
-     displayWeather(data) {
+        
+        this.getWeatherBtn.addEventListener('click', () => this.fetchWeather());
+        this.getLocationBtn.addEventListener('click', () => this.fetchWeatherByLocation());
+    }
+
+    displayWeather(data) {
         this.cityName.textContent = `${data.name}, ${data.sys.country} (${data.coord.lat}, ${data.coord.lon})`;
         this.temperature.textContent = `Temperature: ${data.main.temp} °C`;
         this.description.textContent = `Weather: ${data.weather[0].description}`;
         this.humidity.textContent = `Humidity: ${data.main.humidity}%`;
         this.windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
-    
+
+        
+        const iconCode = data.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+        document.getElementById('weatherIcon').src = iconUrl;
+
         this.weatherCard.style.display = 'block';
     }
     
@@ -35,9 +42,10 @@ class WeatherApp {
 
 class WeatherService extends WeatherApp {
     async fetchWeather() {
+        const apiKey = this.apiKey.value;
         const city = this.cityInput.value;
         if (city) {
-            const data = await this.getWeatherData(city);
+            const data = await this.getWeatherData(city, apiKey);
             if (data) {
                 this.displayWeather(data);
             } else {
@@ -53,7 +61,8 @@ class WeatherService extends WeatherApp {
             navigator.geolocation.getCurrentPosition(
                 async (position) => {
                     const { latitude, longitude } = position.coords;
-                    const data = await this.getWeatherDataByCoordinates(latitude, longitude);
+                    const apiKey = this.apiKey.value;
+                    const data = await this.getWeatherDataByCoordinates(latitude, longitude, apiKey);
                     if (data) {
                         this.displayWeather(data);
                         this.cityInput.value = '';
@@ -70,9 +79,9 @@ class WeatherService extends WeatherApp {
         }
     }
 
-    async getWeatherData(city) {
+    async getWeatherData(city, apiKey) {
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}&units=metric`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
             if (response.ok) {
                 return await response.json();
             }
@@ -82,9 +91,9 @@ class WeatherService extends WeatherApp {
         return null;
     }
 
-    async getWeatherDataByCoordinates(latitude, longitude) {
+    async getWeatherDataByCoordinates(latitude, longitude, apiKey) {
         try {
-            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${this.apiKey}&units=metric`);
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`);
             if (response.ok) {
                 return await response.json();
             }
@@ -95,5 +104,4 @@ class WeatherService extends WeatherApp {
     }
 }
 
-const apiKey = '9f5155eaad812a226b6b6844a485468e'; 
-const weatherApp = new WeatherService(apiKey);
+const weatherApp = new WeatherService();
